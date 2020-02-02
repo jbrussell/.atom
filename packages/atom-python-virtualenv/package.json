@@ -1,0 +1,59 @@
+{
+  "_from": "https://www.atom.io/api/packages/atom-python-virtualenv/versions/1.0.4/tarball",
+  "_id": "atom-python-virtualenv@1.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-NIqlQyCHNat8yyhAWUQ0RWwUyfJBcaLJh89HmUhp1WlrktlK5X7e31NmWF7nrQMdbpxu64/d2WjKmNMUzMux+w==",
+  "_location": "/atom-python-virtualenv",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/atom-python-virtualenv/versions/1.0.4/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atom-python-virtualenv/versions/1.0.4/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atom-python-virtualenv/versions/1.0.4/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atom-python-virtualenv/versions/1.0.4/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/atom-python-virtualenv/versions/1.0.4/tarball",
+  "_shasum": "0b3a2b2c0c4667996c48cb55b9650f2504e9643d",
+  "_spec": "https://www.atom.io/api/packages/atom-python-virtualenv/versions/1.0.4/tarball",
+  "_where": "/private/tmp/apm-install-dir-119105-23413-1qe5qps.tsmm",
+  "bugs": {
+    "url": "https://github.com/pghilardi/atom-python-virtualenv/issues"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-space-pen-views": "latest",
+    "status-bar": ">=0.41.0"
+  },
+  "deprecated": false,
+  "description": "Virtual Env for python environments",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/pghilardi/atom-python-virtualenv#readme",
+  "keywords": [
+    "python",
+    "virtualenv",
+    "venv",
+    "environment",
+    "virtualenvwrapper"
+  ],
+  "license": "MIT",
+  "main": "./lib/init",
+  "name": "atom-python-virtualenv",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pghilardi/atom-python-virtualenv.git"
+  },
+  "version": "1.0.4"
+}

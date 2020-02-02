@@ -1,0 +1,72 @@
+'.source.fortran':
+  'editor':
+    'increaseIndentPattern': '(?ix)^\\s*(
+        (contains|program)\\b
+        |do\\b
+        |if\\b.*\\bthen\\b
+        |else(\\s*if)?\\b
+        |(?!end)(\\w+\\s+)*\\b(function|subroutine)\\b
+      )'
+    'decreaseIndentPattern': '(?ix)^\\s*(
+        contains\\b
+        |end(do|function|if|program|subroutine)?\\b
+        |else(if)?\\b
+      )'
+'.source.fortran.free':
+  'editor':
+    'commentStart': '! '
+    'commentEnd': ''
+    'increaseIndentPattern': '(?ix)^\\s*(
+        (block\\s*data|contains|program|submodule)\\b
+        |((?!end\\b)[^\'"!])*\\b(function|subroutine)\\b
+        |module\\b
+        |type(?!\\s*(\\(|\\=))
+        |(abstract\\s+)?interface\\b
+        |([a-z]\\w*\\s*:\\s*)?(
+          (associate|block|critical|do|forall.*then)\\b
+          |if\\b.*\\bthen\\b
+          |select\\s*(case|type)\\b
+          |where\\b(?!\\s*\\(.*\\)\\s*[a-z])
+        )
+        |(case)\\b
+        |(class|type)\\s+is\\b
+        |else(if|where)?\\b
+      )'
+    'decreaseIndentPattern': '(?ix)^\\s*(
+        (case|contains)\\b
+        |(class|type)\\s+is\\b
+        |end(
+          do|forall|function|if|interface|module|program
+          |select|submodule|subroutine|type|where|procedure
+        )?\\b
+        |else(if|where)?\\b
+      )'
+'.source.fortran.modern':
+  'editor':
+    'commentStart': '! '
+    'commentEnd': ''
+    'increaseIndentPattern': '(?ix)^\\s*(
+        (block\\s*data|contains|program|submodule)\\b
+        |((?!end\\b)[^\'"!])*\\b(function|subroutine)\\b
+        |module\\b(?!\\s+procedure\\b)
+        |type(?!\\s*(\\(|\\=))
+        |(abstract\\s+)?interface\\b
+        |([a-z]\\w*\\s*:\\s*)?(
+          (associate|block|critical|do|forall.*then)\\b
+          |if\\b.*\\bthen\\b
+          |select\\s*(case|type)\\b
+          |where\\b(?!\\s*\\(.*\\)\\s*[a-z])
+        )
+        |(case)\\b
+        |(class|type)\\s+is\\b
+        |else(if|where)?\\b
+      )'
+    'decreaseIndentPattern': '(?ix)^\\s*(
+        (case|contains)\\b
+        |(class|type)\\s+is\\b
+        |end(
+          do|forall|function|if|interface|module|program
+          |select|submodule|subroutine|type|where
+        )?\\b
+        |else(if|where)?\\b
+      )'

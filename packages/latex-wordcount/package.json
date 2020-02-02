@@ -1,0 +1,59 @@
+{
+  "_from": "https://www.atom.io/api/packages/latex-wordcount/versions/0.6.0/tarball",
+  "_id": "latex-wordcount@0.6.0",
+  "_inBundle": false,
+  "_integrity": "sha512-XB1gvA6eRC1Ce7gLom+60m8wzy4slgEebOAufc40jpbJc23M89UXy13FyKl+oitB0hT5loLAbrV80+oBwfezdA==",
+  "_location": "/latex-wordcount",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/latex-wordcount/versions/0.6.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/latex-wordcount/versions/0.6.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/latex-wordcount/versions/0.6.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/latex-wordcount/versions/0.6.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/latex-wordcount/versions/0.6.0/tarball",
+  "_shasum": "6eb45dfdc1bbd1027834b0c2677e3752cddc95c5",
+  "_spec": "https://www.atom.io/api/packages/latex-wordcount/versions/0.6.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119107-60442-w2o8rz.tei",
+  "activationCommands": {
+    "atom-workspace": "latex-wordcount:document-wordcount"
+  },
+  "activationHooks": [
+    "language-latex:grammar-used",
+    "language-latex2e:grammar-used"
+  ],
+  "author": {
+    "name": "Aerijo"
+  },
+  "bugs": {
+    "url": "https://github.com/Aerijo/latex-wordcount/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "fs-plus": "^3.0.0",
+    "tmp": "^0.0.33"
+  },
+  "deprecated": false,
+  "description": "Estimate the wordcount of your LaTeX document",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/Aerijo/latex-wordcount#readme",
+  "keywords": [
+    "latex",
+    "wordcount"
+  ],
+  "license": "MIT",
+  "main": "./lib/latex-wordcount",
+  "name": "latex-wordcount",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aerijo/latex-wordcount.git"
+  },
+  "version": "0.6.0"
+}

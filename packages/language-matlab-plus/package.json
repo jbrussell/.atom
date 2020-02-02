@@ -1,0 +1,57 @@
+{
+  "_from": "https://www.atom.io/api/packages/language-matlab-plus/versions/1.12.0/tarball",
+  "_id": "language-matlab-plus@1.12.0",
+  "_inBundle": false,
+  "_integrity": "sha512-+SsN+jaCaPu9Q+zElqhkjmoDwMLYxZ1fkXkSQ2ckF2d10MWiaO61b7bIvzilwLiKxtC5bXWFg6UpIFz+tCDxQQ==",
+  "_location": "/language-matlab-plus",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/language-matlab-plus/versions/1.12.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/language-matlab-plus/versions/1.12.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/language-matlab-plus/versions/1.12.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/language-matlab-plus/versions/1.12.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/language-matlab-plus/versions/1.12.0/tarball",
+  "_shasum": "8a507876584923c8454aaca9c7c9103a4eeb1c9b",
+  "_spec": "https://www.atom.io/api/packages/language-matlab-plus/versions/1.12.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119105-21444-srxipu.ngu3",
+  "bugs": {
+    "url": "https://github.com/elpollodiablo84/language-matlab-plus/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "atom-space-pen-views": ">=2.0.5"
+  },
+  "deprecated": false,
+  "description": "MATLAB language support in Atom with section borders, section folding and persistent highlighting",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/elpollodiablo84/language-matlab-plus#readme",
+  "keywords": [
+    "MATLAB",
+    "grammar",
+    "language"
+  ],
+  "license": "MIT",
+  "main": "./lib/main.js",
+  "name": "language-matlab-plus",
+  "providedServices": {
+    "section-bounds": {
+      "description": "Get the section bounds for a line",
+      "versions": {
+        "1.7.0": "provideSectionBounds"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elpollodiablo84/language-matlab-plus.git"
+  },
+  "version": "1.12.0"
+}

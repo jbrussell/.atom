@@ -1,0 +1,48 @@
+{
+  "_from": "https://www.atom.io/api/packages/language-fortran/versions/2.1.10/tarball",
+  "_id": "language-fortran@2.1.10",
+  "_inBundle": false,
+  "_integrity": "sha512-HiX3X4aXt2aDESf8LbsYhgMl3C1PQtnRq6Xu1yEqk9vKeheekkf2V0x7BeoKXkt2YZXkE27oQH1kPgDkJIMuqg==",
+  "_location": "/language-fortran",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/language-fortran/versions/2.1.10/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/language-fortran/versions/2.1.10/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/language-fortran/versions/2.1.10/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/language-fortran/versions/2.1.10/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/language-fortran/versions/2.1.10/tarball",
+  "_shasum": "7abab51613cff12f20c194bab4658922d3b22b64",
+  "_spec": "https://www.atom.io/api/packages/language-fortran/versions/2.1.10/tarball",
+  "_where": "/private/tmp/apm-install-dir-12008-91522-51czxq.0veqq",
+  "activationCommands": {
+    "atom-workspace": "language-fortran:toggleComment"
+  },
+  "bugs": {
+    "url": "https://github.com/dparkins/language-fortran/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Syntax highlighting for Fortran in atom ",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/dparkins/language-fortran#readme",
+  "keywords": [
+    "grammar",
+    "fortran"
+  ],
+  "license": "MIT",
+  "main": "./lib/language-fortran",
+  "name": "language-fortran",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dparkins/language-fortran.git"
+  },
+  "version": "2.1.10"
+}

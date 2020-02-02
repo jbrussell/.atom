@@ -1,0 +1,57 @@
+[
+  {
+    title: "Simple_X"
+    paths: [
+      "/Users/russell/Lamont/PROJ_NoMelt_Cij/GRL_19/5_Perple_X/Simple_X"
+      "/Users/russell/Lamont/Perple_X/Simple_X"
+    ]
+  }
+  {
+    title: "My Website"
+    paths: [
+      "/Users/russell/Lamont/WEBSITE/My_Website"
+    ]
+  }
+  {
+    title: "Paper"
+    group: "NoMelt Cij"
+    paths: [
+      "/Users/russell/Lamont/PROJ_NoMelt_Cij/GRL_19/6_PAPER"
+      "/Users/russell/Lamont/PROJ_NoMelt_Cij/GRL_19/6_PAPER/v1"
+    ]
+  }
+  {
+    title: "MaTnoise"
+    group: "YoungORCA"
+    paths: [
+      "/Users/russell/Lamont/PROJ_YoungPacificORCA/Ambient_Noise/MATnoise"
+    ]
+  }
+  {
+    title: "Tiltcomp"
+    paths: [
+      "/Users/russell/Lamont/PROJ_YoungPacificORCA/TILTCOMP"
+    ]
+  }
+  {
+    title: "Vbr"
+    paths: [
+      "/Users/russell/Lamont/VBR/vbr"
+    ]
+  }
+  {
+    title: "Matgsdf"
+    group: "NoMelt_Cij"
+    paths: [
+      "/Users/russell/Lamont/PROJ_YoungPacificORCA/ASWMS/matgsdf"
+      "/Users/russell/Lamont/PROJ_YoungPacificORCA/ASWMS/matgsdf_AGU19"
+    ]
+  }
+  {
+    title: "OBSrange"
+    paths: [
+      "/Users/russell/GRAD/FIELD_WORK/PacificArray_2019/OBSrange"
+      "/Users/russell/Lamont/PROJ_OBSrange/FINAL_RELEASE/OBSrange"
+    ]
+  }
+]

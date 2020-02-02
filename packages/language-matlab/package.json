@@ -1,0 +1,45 @@
+{
+  "_from": "https://www.atom.io/api/packages/language-matlab/versions/0.2.1/tarball",
+  "_id": "language-matlab@0.2.1",
+  "_inBundle": false,
+  "_integrity": "sha512-LQrrOTDq0iQAqyVStWo5Qc+wXOGG4U5YzCCtu6ANjFnq3jy9B60NtSqUHvrTdSL9524npzYG9bM/oF7J5gk9/g==",
+  "_location": "/language-matlab",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/language-matlab/versions/0.2.1/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/language-matlab/versions/0.2.1/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/language-matlab/versions/0.2.1/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/language-matlab/versions/0.2.1/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/language-matlab/versions/0.2.1/tarball",
+  "_shasum": "fc17693927c5561214300b6aa4d4c998743c7d7c",
+  "_spec": "https://www.atom.io/api/packages/language-matlab/versions/0.2.1/tarball",
+  "_where": "/private/tmp/apm-install-dir-119930-36587-1hkjml5.gcjy",
+  "bugs": {
+    "url": "https://github.com/JamesRitchie/language-matlab/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "MATLAB/Octave language support for Atom",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/JamesRitchie/language-matlab#readme",
+  "keywords": [
+    "MATLAB",
+    "Octave"
+  ],
+  "license": "MIT",
+  "name": "language-matlab",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesRitchie/language-matlab.git"
+  },
+  "version": "0.2.1"
+}

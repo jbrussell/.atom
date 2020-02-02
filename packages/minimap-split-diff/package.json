@@ -1,0 +1,56 @@
+{
+  "_from": "https://www.atom.io/api/packages/minimap-split-diff/versions/0.3.7/tarball",
+  "_id": "minimap-split-diff@0.3.7",
+  "_inBundle": false,
+  "_integrity": "sha512-gVpHgo2PWeODFSNY7yOoyDOza4x22eR+O/owkGzCOtci8fHaHEOuQQRTFm5rU94KeZpNQyiQgXEiCEwK7zN8Ew==",
+  "_location": "/minimap-split-diff",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/minimap-split-diff/versions/0.3.7/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/minimap-split-diff/versions/0.3.7/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/minimap-split-diff/versions/0.3.7/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/minimap-split-diff/versions/0.3.7/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/minimap-split-diff/versions/0.3.7/tarball",
+  "_shasum": "2d0c3bec610422069f976fd12798a3b549224e9b",
+  "_spec": "https://www.atom.io/api/packages/minimap-split-diff/versions/0.3.7/tarball",
+  "_where": "/private/tmp/apm-install-dir-119105-26596-yqfhmp.eg6us",
+  "bugs": {
+    "url": "https://github.com/mupchrch/minimap-split-diff/issues"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "split-diff": {
+      "versions": {
+        "1.0.0": "consumeSplitDiff"
+      }
+    },
+    "minimap": {
+      "versions": {
+        "1.0.0": "consumeMinimapServiceV1"
+      }
+    }
+  },
+  "dependencies": {
+    "event-kit": ">= 0.7.2"
+  },
+  "deprecated": false,
+  "description": "A minimap plugin for the Split Diff package",
+  "engines": {
+    "atom": ">= 1.14.0 < 2.0.0"
+  },
+  "homepage": "https://github.com/mupchrch/minimap-split-diff#readme",
+  "license": "MIT",
+  "main": "./lib/minimap-split-diff",
+  "name": "minimap-split-diff",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mupchrch/minimap-split-diff.git"
+  },
+  "version": "0.3.7"
+}

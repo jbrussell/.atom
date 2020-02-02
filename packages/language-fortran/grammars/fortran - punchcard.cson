@@ -1,0 +1,389 @@
+'comment': '?i: has to be added everywhere because fortran is case insensitive; NB: order of matching matters'
+'name': 'Fortran - Punchcard'
+'scopeName': 'source.fortran.punchcard'
+'fileTypes': [ ]
+'patterns': [
+  {'include': '#comments'}
+  {'include': '#constants'}
+  {'include': '#operators'}
+  {'include': '#Fortran-definitions'}
+  {'include': '#type-specifications'}
+  {'include': '#type-attributes'}
+  {'include': '#control-constructs'}
+  {'include': '#control-statements'}
+  {'include': '#intrinsic-functions'}
+  {'include': '#data-type-statements'}
+  {'include': '#IO-statements'}
+  {'include': '#parentheses'}
+]
+'repository':
+  # comments:
+  'comments':
+    'patterns':[
+      {
+        'begin': '^[Cc\\*]'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.fortran'
+        'end': '(?=\\n)'
+        'name': 'comment.line.c.fortran'
+        'patterns': [
+          {
+            'match': '\\\\\\s*\\n'
+          }
+        ]
+      }
+    ]
+  # operators:
+  'operators':
+    'patterns':[
+      {
+        'comment': 'Arithmetic operators.'
+        'name': 'keyword.operator.fortran'
+        'match': '((?<!\\=)\\=(?!\\=)|\\-|\\+|\\/|\\*)'
+      }
+      {
+        'comment': 'Logical operators.'
+        'name': 'keyword.operator.logical.fortran'
+        'match': '(?ix)(\\.and\\.|\\.or\\.|\\.eq\\.|\\.eqv\\.|\\.lt\\.|\\.le\\.
+          |\\.gt\\.|\\.ge\\.|\\.ne\\.|\\.not\\.|\\.neqv\\.)'
+      }
+      {
+        'comment': 'Misc operators.'
+        'name': 'keyword.operator.fortran'
+        'match': '(\\/\\/|::)'
+      }
+    ]
+  # constants:
+  'constants':
+    'patterns':[
+      {
+        'comment': 'Logical constants'
+        'name': 'constant.language.fortran'
+        'match': '(?i)\\.(true|false)\\.'
+      }
+      {
+        'comment': 'Numeric constants'
+        'name': 'constant.numeric.fortran'
+        'match': '(?ix)[\\+\\-]?\\b(\\d+\\.?\\d*|\\.\\d+)(d[\\+\\-]?\\d+|e[\\+\\-]?\\d+(_\\w+)?)?(?![a-z_])'
+      }
+      {
+        'comment': 'Single quote string constants.'
+        'applyEndPatternLast': 1
+        'begin': '\''
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.fortran'
+        'comment': 'String'
+        'end': '\''
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.fortran'
+        'name': 'string.quoted.single.fortran'
+        'patterns': [
+          {
+            'match': '\'\''
+            'name': 'constant.character.escape.apostrophe.fortran'
+          }
+        ]
+      }
+      {
+        'comment': 'Double quote string constants.'
+        'applyEndPatternLast': 1
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.fortran'
+        'comment': 'String'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.fortran'
+        'name': 'string.quoted.double.fortran'
+        'patterns': [
+          {
+            'match': '""'
+            'name': 'constant.character.escape.quote.fortran'
+          }
+        ]
+      }
+    ]
+  # definitions:
+  'Fortran-definitions':
+    'patterns':[
+      {'include': '#block-data-definition'}
+      {'include': '#function-definition'}
+      {'include': '#program-definition'}
+      {'include': '#subroutine-definition'}
+    ]
+  'program-definition':
+    {
+      'comment': 'Program definition construct'
+      'name': 'meta.program.fortran'
+      'begin': '(?i)(?:^|(?<=;))\\s*\\b(program)\\b\\s+([a-z]\\w*)'
+      'beginCaptures':
+        '1': 'name': 'keyword.control.program.fortran'
+      'end': '(?i)^\\s*(end)(?:\\s*(\\1)(\\s+\\2)?\\b)?\\s*([^;!\\n]+)?'
+      'endCaptures':
+        '1': 'name': 'keyword.other.fortran'
+        '2': 'name': 'keyword.control.program.fortran'
+        '4': 'name': 'invalid.error.fortran'
+      'applyEndPatternLast': 1
+      'patterns': [
+        {'include': '$self'}
+      ]
+    }
+  'block-data-definition':
+    {
+      'contentName': 'meta.block-data.fortran'
+      'begin': '(?i)(?:^|\\b(?<!end)\\s)\\s*\\b(block\\s*data)\\b\\s+([a-z]\\w*)?'
+      'beginCaptures':
+        '1': 'name': 'keyword.control.block-data.fortran'
+      'end': '(?i)^\\s*(end)(?:\\s*(\\1)(\\s+\\2)?\\b)?\\s*([^;!\\n]+)?'
+      'endCaptures':
+        '1': 'name': 'keyword.control.end.fortran'
+        '2': 'name': 'keyword.control.block-data.fortran'
+        '4': 'name': 'invalid.error.fortran'
+      'applyEndPatternLast': 1
+      'patterns': [
+        {'include': '$self'}
+      ]
+    }
+  'function-definition':
+    {
+      'comment': 'Function definition construct'
+      'name': 'meta.function.fortran'
+      'begin': '(?i)(?:^|(?<=;)|\\b(?<!end)\\s)\\s*\\b(function)\\b\\s+([a-z]\\w*)'
+      'beginCaptures':
+        '1': 'name': 'storage.type.function.fortran'
+        '2': 'name': 'entity.name.function.fortran'
+      'end': '(?i)^\\s*(end)(?:\\s*(\\1)(\\s+\\2)?)?\\b\\s*([^;!\\n]+)?'
+      'endCaptures':
+        '1': 'name': 'keyword.other.end.fortran'
+        '2': 'name': 'storage.type.function.fortran'
+        '3': 'name': 'entity.name.function.fortran'
+        '4': 'name': 'invalid.error.fortran'
+      'applyEndPatternLast': 1
+      'patterns': [
+        {
+          'comment': 'Rest of the first line in function construct.'
+          'name': 'meta.first-line.function.fortran'
+          'begin': '\\G(?!\\s*[;!\\n])'
+          'end': '(?=[;!\\n])'
+          'patterns':[
+            {'include': '#dummy-variable-list'}
+          ]
+        }
+        {'include': '$self'}
+      ]
+    }
+  'subroutine-definition':
+    {
+      'name': 'meta.subroutine.fortran'
+      'begin': '(?i)(?:^|(?<=;)|\\b(?<!end)\\s)\\s*\\b(subroutine)\\b\\s+([a-z]\\w*)'
+      'beginCaptures':
+        '1': 'name': 'storage.type.function.fortran'
+        '2': 'name': 'entity.name.function.fortran'
+      'end': '(?i)^\\s*(end)(?:\\s*(\\1)(\\s+\\2)?\\b)?\\s*([^;!\\n]+)?'
+      'endCaptures':
+        '1': 'name': 'keyword.other.end.fortran'
+        '2': 'name': 'storage.type.function.fortran'
+        '3': 'name': 'entity.name.function.fortran'
+        '4': 'name': 'invalid.error.fortran'
+      'applyEndPatternLast': 1
+      'patterns': [
+        {
+          'comment': 'Rest of the first line in subroutine construct.'
+          'name': 'meta.first-line.subroutine.fortran'
+          'begin': '\\G(?!\\s*[;!\\n])'
+          'end': '(?=[;!\\n])'
+          'patterns':[
+            {'include': '#dummy-variable-list'}
+          ]
+        }
+        {'include': '$self'}
+      ]
+    }
+  # specifications:
+  'type-specifications':
+    {
+      'name': 'meta.specification.fortran'
+      'begin': '(?ix)(?:^|\\G|(?<=[;a-z]))\\s*\\b(character|complex|double\\s+precision
+        |integer|logical|real)\\b'
+      'beginCaptures':
+        '1': 'name': 'storage.type.fortran'
+      'end': '(?i)(?=[a-z\\);!\\n])'
+      'patterns': [
+        {'include': '$self'}
+        {
+          'begin': '\\G\\('
+          'end': '\\)'
+          'patterns':[
+            {'include': '#procedure-call-dummy-variable'}
+            {'include': '$self'}
+          ]
+        }
+        {
+          'begin': '(?=,)'
+          'end': '(?=::|[;!\\n])'
+          'patterns':[
+            {'include': '$self'}
+          ]
+        }
+      ]
+    }
+  'type-attributes':
+    {
+      'comment': 'data type attributes'
+      'name': 'storage.modifier.fortran'
+      'match': '(?i)\\b(common|data|dimension|equivalence|external|intrinsic|parameter|save)\\b'
+    }
+  # control constructs:
+  'control-constructs':
+    'patterns':[
+      {'include': '#do-construct'}
+      {'include': '#if-construct'}
+    ]
+  'do-construct':
+    'patterns':[
+      {
+        'name': 'meta.do.labeled.fortran'
+        'begin': '(?i)(?:^|(?<=\\d))\\s*(do)\\s+(\\d{1,5})\\b'
+        'beginCaptures':
+          '1': 'name': 'keyword.control.do.fortran'
+          '2': 'name': 'constant.numeric.fortran'
+        'end': '(?i)^(?=\\s*\\2\\b)'
+        'patterns':[
+          {'include': '$self'}
+        ]
+      }
+      {
+        'match': '(?i)(?:^|(?<=\\d))\\s*\\b(do)\\b(?=\\s*[;!\\n])'
+        'captures':
+          '1': 'name': 'keyword.control.do.fortran'
+      }
+    ]
+  'if-construct':
+    {
+      'contentName': 'meta.if.fortran'
+      'begin': '(?i)(?:^|\\G(?<=:)|(?<=;))\\s*(if)\\b'
+      'beginCaptures':
+        '1': 'name': 'keyword.control.if.fortran'
+      'end': '(?<!\\G)(?!\\s*&)'
+      'applyEndPatternLast': 1
+      'patterns':[
+        {'include': '#parentheses'}
+        {
+          'contentName': 'meta.then.fortran'
+          'begin': '(?i)\\s*\\b(then)\\b'
+          'beginCaptures':
+            '1': 'name': 'keyword.control.then.fortran'
+          'end': '(?i)(?:^|(?<=;))\\s*(end\\s*if)\\b'
+          'endCaptures':
+            '1': 'name': 'keyword.control.endif.fortran'
+          'patterns':[
+            {
+              'begin': '(?i)(?:^|(?<=;))\\s*(else\\s*if)\\b'
+              'beginCaptures':
+                '1': 'name': 'keyword.control.elseif.fortran'
+              'end': '(?=[;!\\n])'
+              'patterns':[
+                {'include': '#parentheses'}
+                {
+                  'match': '\\s*\\b(then)\\b'
+                  'captures':
+                    '1': 'name': 'keyword.control.then.fortran'
+                }
+              ]
+            }
+            {
+              'begin': '(?i)(?:^|(?<=;))\\s*(else)\\b(?!\\s*if\\b)'
+              'beginCaptures':
+                '1': 'name': 'keyword.control.else.fortran'
+              'end': '(?i)(?=\\s*end\\s*if\\b)'
+              'patterns':[
+                {'include': '$self'}
+              ]
+            }
+            {'include': '$self'}
+          ]
+        }
+      ]
+    }
+  # intrinsic procedures:
+  'intrinsic-functions':
+    'comment': 'Intrinsic functions introduced in the Fortran 1977 standard.'
+    'begin': '(?ix)\\b([icd]?abs|acos|[ad]int|[ad]nint|aimag|amax[01]|
+      amin[01]|d?asin|d?atan|d?atan2|char|conjg|[cd]?cos|d?cosh|cmplx|dble|
+      i?dim|dmax1|dmin1|dprod|[cd]?exp|float|ichar|idint|ifix|index|int|len|
+      lge|lgt|lle|llt|[acd]?log|[ad]?log10|max[01]?|min[01]?|[ad]?mod|
+      (id)?nint|real|[di]?sign|[cd]?sin|d?sinh|sngl|[cd]?sqrt|d?tan|d?tanh)\\s*\\('
+    'beginCaptures':
+      '1': 'name': 'keyword.other.function.intrinsic.fortran'
+    'end': '\\)'
+    'patterns':[
+      {'include': '#procedure-call-dummy-variable'}
+      {'include': '$self'}
+    ]
+  # statements:
+  'control-statements':
+    {
+      'comment': 'Statements controling the flow of the program'
+      'name': 'keyword.control.fortran'
+      'match': '(?i)\\b(assign|call|contains|continue|entry|go\\s*to|pause|return|stop|to)\\b'
+    }
+  'data-type-statements':
+    {
+      'comment': 'data type attributes'
+      'name': 'storage.modifier.fortran'
+      'match': '(?i)\\b(implicit\\s*none|implicit)\\b'
+    }
+  'IO-statements':
+    'comment': 'IO statements introduced in the Fortran 1977 standard.'
+    'patterns':[
+      {
+        'begin': '(?ix)\\b(backspace|close|format|endfile|inquire|open|
+          read|rewind|write)\\s*\\('
+        'beginCaptures':
+          '1': 'name': 'keyword.control.IO.fortran'
+        'end': '(\\)|(?=\\n))'
+        'patterns':[
+          {'include': '#procedure-call-dummy-variable'}
+          {'include': '$self'}
+        ]
+      }
+      {
+        'comment': 'format and print statement.'
+        'match': '(?i)\\b(format|print|read)\\b'
+        'name': 'keyword.control.IO.fortran'
+      }
+    ]
+  # other:
+  'dummy-variable-list':
+    {
+      'begin': '\\G\\s*(\\()'
+      'beginCaptures':
+        '1': 'name': 'punctuation.definition.parameters.begin.fortran'
+      'end': '(\\)|(?=\\n))'
+      'endCaptures':
+        '0': 'name': 'punctuation.definition.parameters.end.fortran'
+      'patterns': [
+        {
+          'comment': 'dummy variable'
+          'match': '(?i)(?:^|(?<=[&,\\(]))\\s*([a-z]\\w*)'
+          'captures':
+            '1': 'name': 'variable.parameter.fortran'
+        }
+      ]
+    }
+  'procedure-call-dummy-variable':
+    'name': 'variable.parameter.dummy-variable.fortran'
+    'match': '(?i)\\b([a-z]\\w*)(?=\\s*\\=)'
+  'parentheses':
+    {
+      'begin': '(?i)\\s*\\('
+      'end': '(?:\\)|(?=[;!\\n]))'
+      'patterns':[
+        {'include': '$self'}
+      ]
+    }

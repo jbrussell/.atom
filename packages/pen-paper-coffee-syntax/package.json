@@ -1,0 +1,48 @@
+{
+  "_from": "https://www.atom.io/api/packages/pen-paper-coffee-syntax/versions/0.17.0/tarball",
+  "_id": "pen-paper-coffee-syntax@0.17.0",
+  "_inBundle": false,
+  "_integrity": "sha512-2lDydcgZvcOhoFhSQSbM4qtfBW5eJP+fUkdRgi1vgaeNlAQfaWQkuUVr+ARFjdxzMAMsqaQgM5MW0cduEGmd6Q==",
+  "_location": "/pen-paper-coffee-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/pen-paper-coffee-syntax/versions/0.17.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/pen-paper-coffee-syntax/versions/0.17.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/pen-paper-coffee-syntax/versions/0.17.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/pen-paper-coffee-syntax/versions/0.17.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/pen-paper-coffee-syntax/versions/0.17.0/tarball",
+  "_shasum": "351ee701957359d0d9bb4d1e5c8f9c4c54de9243",
+  "_spec": "https://www.atom.io/api/packages/pen-paper-coffee-syntax/versions/0.17.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119930-39481-k9pyb7.ooo9e",
+  "bugs": {
+    "url": "https://github.com/nylki/pen-paper-coffee-syntax/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A syntax theme specifically for writing papers in markdown. Featuring a paper like color scheme and increased font-size for headings",
+  "engines": {
+    "atom": ">=1.0.0"
+  },
+  "homepage": "https://github.com/nylki/pen-paper-coffee-syntax#readme",
+  "keywords": [
+    "markdown",
+    "light",
+    "brown",
+    "writing",
+    "citing"
+  ],
+  "license": "MIT",
+  "name": "pen-paper-coffee-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nylki/pen-paper-coffee-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "0.17.0"
+}

@@ -1,0 +1,59 @@
+{
+  "_from": "https://www.atom.io/api/packages/cell-navigation/versions/0.1.0/tarball",
+  "_id": "cell-navigation@0.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-biG1nlLQ6Kcvw1VbSJNS+/j0+Qz66WdXAyRdU0NW+7dCllZld4KesTwlGlx9ybHMQLgIlMzNEMPHK9NJhphKdg==",
+  "_location": "/cell-navigation",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/cell-navigation/versions/0.1.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/cell-navigation/versions/0.1.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/cell-navigation/versions/0.1.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/cell-navigation/versions/0.1.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/cell-navigation/versions/0.1.0/tarball",
+  "_shasum": "7734d91618973c6c238047d7fd355347504cef5b",
+  "_spec": "https://www.atom.io/api/packages/cell-navigation/versions/0.1.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119104-9453-1exlvr3.9jrn",
+  "activationCommands": {
+    "atom-workspace": [
+      "cell-navigation:next-cell",
+      "cell-navigation:previous-cell",
+      "cell-navigation:select-cell",
+      "cell-navigation:select-down",
+      "cell-navigation:select-up",
+      "cell-navigation:move-cell-down",
+      "cell-navigation:move-cell-up"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/hoishing/cell-navigation/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Navigate, move and select code cells defined by `# %%`. Enhance your coding experience with Hydrogen and Jupytext.",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/hoishing/cell-navigation#readme",
+  "keywords": [
+    "hydrogen",
+    "jupyter",
+    "jupyterlab",
+    "ipython",
+    "cell"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "cell-navigation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoishing/cell-navigation.git"
+  },
+  "version": "0.1.0"
+}

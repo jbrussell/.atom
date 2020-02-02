@@ -1,0 +1,55 @@
+{
+  "_from": "https://www.atom.io/api/packages/zen/versions/0.18.0/tarball",
+  "_id": "Zen@0.18.0",
+  "_inBundle": false,
+  "_integrity": "sha512-2yIfdVWt2gLgvqzweWsdIHOtFbMdMLE5WwkFgg9KtFPd7iHDUVggWBtmHHLrZ2PhZXWjjXyGNXY55IIETxJ5rw==",
+  "_location": "/Zen",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/zen/versions/0.18.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/zen/versions/0.18.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/zen/versions/0.18.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/zen/versions/0.18.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/zen/versions/0.18.0/tarball",
+  "_shasum": "f7d93d67444735d8e814994b77ddf646d606940d",
+  "_spec": "https://www.atom.io/api/packages/zen/versions/0.18.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119105-21679-hbhiuq.1r5bi",
+  "activationCommands": {
+    "atom-text-editor": [
+      "zen:toggle"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/defunkt/zen/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "jquery": "2.x.x"
+  },
+  "deprecated": false,
+  "description": "Distraction free writing.",
+  "engines": {
+    "atom": ">=1.17.0 <2.0.0"
+  },
+  "homepage": "https://github.com/defunkt/zen#readme",
+  "keywords": [
+    "writing",
+    "zen",
+    "distraction free"
+  ],
+  "license": "MIT",
+  "main": "./lib/zen",
+  "name": "Zen",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/defunkt/zen.git"
+  },
+  "version": "0.18.0"
+}

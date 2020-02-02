@@ -1,0 +1,42 @@
+{
+  "_from": "https://www.atom.io/api/packages/theme-switcher/versions/1.1.0/tarball",
+  "_id": "theme-switcher@1.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-8r+IqLx9ECj+5eWPYOk9WBE82ns5nKayuheC/72ta3uqw8tdnrABXB7Nze/NLyg32zg4dLJL33RkULpPD1NpnA==",
+  "_location": "/theme-switcher",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/theme-switcher/versions/1.1.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/theme-switcher/versions/1.1.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/theme-switcher/versions/1.1.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/theme-switcher/versions/1.1.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/theme-switcher/versions/1.1.0/tarball",
+  "_shasum": "3545c21ea2a55e6b3da9de31bc2a4c87d2c4b3f1",
+  "_spec": "https://www.atom.io/api/packages/theme-switcher/versions/1.1.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119930-40498-1fzdcku.vp4qf",
+  "bugs": {
+    "url": "https://github.com/al3x/atom-theme-switcher/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Switches between one theme and another. Ideal for light/dark themes like Solarized.",
+  "engines": {
+    "atom": ">0.186.0"
+  },
+  "homepage": "https://github.com/al3x/atom-theme-switcher#readme",
+  "license": "MIT",
+  "main": "./lib/theme-switcher",
+  "name": "theme-switcher",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/al3x/atom-theme-switcher.git"
+  },
+  "version": "1.1.0"
+}

@@ -1,0 +1,56 @@
+{
+  "_from": "https://www.atom.io/api/packages/linter-matlab/versions/1.2.0/tarball",
+  "_id": "linter-matlab@1.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-jPjEJw+Nh60FcpfFY88S9P2SnYH0EjzNusxkw3P1IfLsAdvipaRhvdSBurv3V6JfPiBO5L4W+mWTWQV/BOML+A==",
+  "_location": "/linter-matlab",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/linter-matlab/versions/1.2.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/linter-matlab/versions/1.2.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/linter-matlab/versions/1.2.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/linter-matlab/versions/1.2.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/linter-matlab/versions/1.2.0/tarball",
+  "_shasum": "d806f7435ce4da876d8d7fbb6d505d356c1268c4",
+  "_spec": "https://www.atom.io/api/packages/linter-matlab/versions/1.2.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119108-10477-td0zz1.jpi0b",
+  "activationCommands": [],
+  "bugs": {
+    "url": "https://github.com/ajdm/linter-matlab/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Linter plugin for MATLAB, using mlint",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/ajdm/linter-matlab#readme",
+  "keywords": [
+    "matlab",
+    "lint",
+    "linter",
+    "mlint"
+  ],
+  "license": "MIT",
+  "main": "./lib/linter-matlab",
+  "name": "linter-matlab",
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajdm/linter-matlab.git"
+  },
+  "version": "1.2.0"
+}

@@ -1,0 +1,62 @@
+{
+  "_from": "https://www.atom.io/api/packages/wordcount/versions/3.1.0/tarball",
+  "_id": "wordcount@3.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-Au+bdWhbUyiA8um63+iKOe/oIVxJV6DMaj4sIT5FSu1SzFqCYzX0VMoLNHQYBUU6uP1g2nYGPwwKJgPR8WFP0g==",
+  "_location": "/wordcount",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/wordcount/versions/3.1.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/wordcount/versions/3.1.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/wordcount/versions/3.1.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/wordcount/versions/3.1.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/wordcount/versions/3.1.0/tarball",
+  "_shasum": "e71a7ffbe04f4aafaa135f22e9a7697f5253739f",
+  "_spec": "https://www.atom.io/api/packages/wordcount/versions/3.1.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119930-40273-fva206.olhyd",
+  "bugs": {
+    "url": "https://github.com/nesQuick/atom-wordcount/issues"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
+  },
+  "deprecated": false,
+  "description": "Counts the words (and characters) in your current document, as well as in your selections and displays it in the status bar.",
+  "engines": {
+    "atom": ">=0.180.0"
+  },
+  "homepage": "https://github.com/nesQuick/atom-wordcount#readme",
+  "keywords": [
+    "word count",
+    "word",
+    "count",
+    "character count",
+    "char",
+    "character",
+    "status",
+    "bar",
+    "highlight"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "wordcount",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nesQuick/atom-wordcount.git"
+  },
+  "version": "3.1.0"
+}

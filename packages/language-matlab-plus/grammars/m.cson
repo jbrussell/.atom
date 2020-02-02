@@ -1,0 +1,642 @@
+name: "MATLAB"
+scopeName: "source.matlab"
+fileTypes: ["m"]
+
+patterns: [
+  { include: "#classdef" }
+  { include: "#function" }
+  { include: "#blocks" }
+  { include: "#constants_override" }
+  { include: "#brackets" }
+  { include: "#curlybrackets" }
+  { include: "#parens" }
+  { include: "#persistent" }
+  { include: "#string" }
+  { include: "#transpose" }
+  { include: "#double_quote" }
+  { include: "#operators" }
+  { include: "#keyword_with_string"}
+  { include: "#builtin_keywords" }
+  { include: "#comments" }
+  { include: "#number" }
+  { include: "#punctuation"}
+  { include: "#variable_invalid" }
+  { include: "#not_equal_invalid" }
+  { include: "#variable_assignment" }
+]
+
+repository:
+  blocks:
+    patterns: [
+      {
+        begin: "^\\s*(for)\\b([^,\\n]+)"
+        beginCaptures:
+          1: name: "keyword.control.for.matlab"
+          2:
+             name: "meta.for-quantity.matlab"
+             patterns: [{ include: "$self" }]
+        end: "\\s*\\b(end)\\b"
+        endCaptures:
+          1: name: "keyword.control.end.for.matlab"
+        name: "meta.for.matlab"
+        patterns: [{ include: "$self" }]
+      }
+      {
+        begin: "^\\s*(parfor)\\b([^,\\n]+)"
+        beginCaptures:
+          1: name: "keyword.control.parfor.matlab"
+          2:
+             name: "meta.parfor-quantity.matlab"
+             patterns: [{ include: "$self" }]
+        end: "^\\s*\\b(end)\\b"
+        endCaptures:
+          1: name: "keyword.control.end.parfor.matlab"
+        name: "meta.parfor.matlab"
+        patterns: [{ include: "$self" }]
+      }
+      {
+        begin: "^\\s*(if)\\b([^,\\n]+)"
+        beginCaptures:
+          1: name: "keyword.control.if.matlab"
+          2:
+             name: "meta.if-condition.matlab"
+             patterns: [{ include: "#patterns_not_kws" }]
+        end: "\\s*\\b(end)\\b"
+        endCaptures:
+          1: name: "keyword.control.end.if.matlab"
+        name: "meta.if.matlab"
+        patterns: [
+          {
+            name: "meta.elseif.matlab"
+            match: "^\\s*(elseif)\\b([^,\\n]+)"
+            captures:
+              1: name: "keyword.control.elseif.matlab"
+              2:
+                 name: "meta.elseif-condition.matlab"
+                 patterns: [{ include: "#patterns_not_kws" }]
+          }
+          {
+            name: "meta.else.matlab"
+            match: "^\\s*\\b(else)\\b"
+            captures:
+              1: name: "keyword.control.else.matlab"
+          }
+          { include: "$self" }
+        ]
+      }
+      {
+        begin: "^\\s*(while)\\b([^,\\n]+)"
+        beginCaptures:
+          1: name: "keyword.control.while.matlab"
+          2:
+             name: "meta.while-condition.matlab"
+             patterns: [{ include: "#patterns_not_kws" }]
+        end: "^\\s*\\b(end)\\b"
+        endCaptures:
+          1: name: "keyword.control.end.while.matlab"
+        name: "meta.while.matlab"
+        patterns: [{ include: "$self" }]
+      }
+      {
+        begin: "^\\s*(switch)\\b([^,\\n]+)"
+        beginCaptures:
+          1: name: "keyword.control.switch.matlab"
+          2:
+             name: "meta.switch-expression.matlab"
+             patterns: [{ include: "#patterns_not_kws" }]
+        end: "^\\s*\\b(end)\\b"
+        endCaptures:
+          1: name: "keyword.control.end.switch.matlab"
+        name: "meta.switch.matlab"
+        patterns: [
+          {
+            name: "meta.case.matlab"
+            match: "^\\s*(case)\\b([^,\\n]+)"
+            captures:
+              1: name: "keyword.control.case.matlab"
+              2:
+                 name: "meta.case-expression.matlab"
+                 patterns: [{ include: "#patterns_not_kws" }]
+          }
+          {
+            name: "meta.otherwise.matlab"
+            match: "^\\s*(otherwise)\\b"
+            captures:
+              1: name: "keyword.control.otherwise.matlab"
+          }
+          { include: "$self" }
+        ]
+      }
+      {
+        begin: "^\\s*\\b(try)\\b"
+        beginCaptures:
+          1: name: "keyword.control.try.matlab"
+        end: "^\\s*\\b(end)\\b"
+        endCaptures:
+          1: name: "keyword.control.end.try.matlab"
+        name: "meta.try.matlab"
+        patterns: [
+          {
+            name: "meta.catch.matlab"
+            match: "^\\s*(catch)\\b([^,\\n]+)"
+            captures:
+              1: name: "keyword.control.catch.matlab"
+              2:
+                name: "meta.catch-exception.matlab"
+                patterns: [{ include: "$self" }]
+          }
+          { include: "$self" }
+        ]
+      }
+    ]
+
+  brackets:
+    begin: "\\["
+    beginCaptures:
+      0: name: "punctuation.definition.array.brackets.begin.matlab"
+    contentName: "meta.brackets.matlab"
+    end: "\\]"
+    endCaptures:
+      0: name: "punctuation.definition.array.brackets.end.matlab"
+    patterns: [{ include: "#patterns_not_kws" }]
+
+  builtin_keywords:
+    patterns: [
+      { include: "#constants" }
+      { include: "#variables" }
+      # Remove comment above and reload grammar if you want support functions highlighting
+      # { include: "support.matlab"}
+    ]
+    repository:
+      constants:
+        comment: "MATLAB constants"
+        match: "(?<!\\.)\\b(eps|false|pi|Inf|inf|intmax|intmin|namelengthmax|NaN|nan|on|off|realmax|realmin|true)\\b"
+        name: "constant.language.matlab"
+
+      variables:
+        comment: "MATLAB variables"
+        match: "(?<!\\.)\\b(nargin|nargout|varargin|varargout)\\b"
+        name: "variable.other.function.matlab"
+
+  classdef:
+    patterns: [
+      {
+        begin: """
+          (?x)
+          						(^\\s*)						# Leading whitespace
+          						(classdef)
+          						\\s+
+          						(									# Optional attributes
+          							\\( [^)]* \\)
+          							\\s*
+          						)?
+          						(
+          							([a-zA-Z_]\\w*)	# Class name
+          							(?:							# Optional inheritance
+          								\\s*
+          								(<)
+          								\\s*
+          								([^%]*)
+          							)?
+          						)
+          						\\s*($|(?=%))
+
+        """
+        beginCaptures:
+          2: name: "storage.type.function.matlab"
+          3: patterns: [
+              {
+                match: "[a-zA-Z_]\\w*"
+                name: "variable.parameter.class.matlab"
+              }
+              {
+                begin: "=\\s*"
+                end: ",|(?=\\))"
+                patterns: [
+                  {
+                    match: "true|false"
+                    name: "constant.language.boolean.matlab"
+                  }
+                  { include: "#string" }
+                ]
+              }
+            ]
+          4: name: "meta.class-declaration.matlab"
+          5: name: "entity.name.section.class.matlab"
+          6: name: "keyword.operator.other.matlab"
+          7: patterns: [
+              {
+                match: "[a-zA-Z_]\\w*(\\.[a-zA-Z_]\\w*)?"
+                name: "entity.other.inherited-class.matlab"
+              }
+              {
+                match: "&"
+                name: "keyword.operator.other.matlab"
+              }
+            ]
+        end: "^\\s*(end)\\b"
+        endCaptures:
+          1: name: "keyword.control.end.class.matlab"
+        name: "meta.class-definition.matlab"
+        patterns: [
+          {
+            begin: """
+              (?x)
+              								(^\\s*)						# Leading whitespace
+              								(properties)
+              								\\s+
+              								(									# Optional attributes
+              									\\( [^)]* \\)
+              								)?
+              								\\s*($|(?=%))
+
+            """
+            beginCaptures:
+              2: name: "keyword.control.properties.matlab"
+              3: patterns: [
+                  {
+                    match: "[a-zA-Z_]\\w*"
+                    name: "variable.parameter.properties.matlab"
+                  }
+                  {
+                    begin: "=\\s*"
+                    end: ",|(?=\\))"
+                    patterns: [
+                      {
+                        match: "true|false"
+                        name: "constant.language.boolean.matlab"
+                      }
+                      {
+                        match: "public|protected|private"
+                        name: "constant.language.access.matlab"
+                      }
+                    ]
+                  }
+                ]
+            end: "^\\s*(end)\\b"
+            endCaptures:
+              1: name: "keyword.control.end.properties.matlab"
+            name: "meta.properties.matlab"
+            patterns: [{ include: "$self" }]
+          }
+          {
+            begin: """
+              (?x)
+              								(^\\s*)						# Leading whitespace
+              								(methods)
+              								\\s+
+              								(									# Optional attributes
+              									\\( [^)]* \\)
+              								)?
+              								\\s*($|(?=%))
+
+            """
+            beginCaptures:
+              2: name: "keyword.control.methods.matlab"
+              3: patterns: [
+                  {
+                    match: "[a-zA-Z_]\\w*"
+                    name: "variable.parameter.methods.matlab"
+                  }
+                  {
+                    begin: "=\\s*"
+                    end: ",|(?=\\))"
+                    patterns: [
+                      {
+                        match: "true|false"
+                        name: "constant.language.boolean.matlab"
+                      }
+                      {
+                        match: "public|protected|private"
+                        name: "constant.language.access.matlab"
+                      }
+                    ]
+                  }
+                ]
+            end: "^\\s*(end)\\b"
+            endCaptures:
+              1: name: "keyword.control.end.methods.matlab"
+            name: "meta.methods.matlab"
+            patterns: [{ include: "$self" }]
+          }
+          {
+            begin: """
+              (?x)
+              								(^\\s*)						# Leading whitespace
+              								(events)
+              								\\s+
+              								(									# Optional attributes
+              									\\( [^)]* \\)
+              								)?
+              								\\s*($|(?=%))
+
+            """
+            beginCaptures:
+              2: name: "keyword.control.events.matlab"
+              3: patterns: [
+                  {
+                    match: "[a-zA-Z_]\\w*"
+                    name: "variable.parameter.events.matlab"
+                  }
+                  {
+                    begin: "=\\s*"
+                    end: ",|(?=\\))"
+                    patterns: [
+                      {
+                        match: "true|false"
+                        name: "constant.language.boolean.matlab"
+                      }
+                      {
+                        match: "public|protected|private"
+                        name: "constant.language.access.matlab"
+                      }
+                    ]
+                  }
+                ]
+            end: "^\\s*(end)\\b"
+            endCaptures:
+              1: name: "keyword.control.end.events.matlab"
+            name: "meta.events.matlab"
+          }
+          {
+            begin: """
+              (?x)
+              								(^\\s*)								# Leading whitespace
+              								(enumeration)
+              								\\s*($|(?=%))
+
+            """
+            beginCaptures:
+              2: name: "keyword.control.enumeration.matlab"
+            end: "^\\s*(end)\\b"
+            endCaptures:
+              1: name: "keyword.control.end.enumeration.matlab"
+            name: "meta.enumeration.matlab"
+          }
+          { include: "$self" }
+        ]
+      }
+    ]
+
+  comments:
+    patterns: [
+      {
+        begin: "^[ \\t]*(%%).*"
+        beginCaptures:
+          0: name: "comment.line.double-percentage.matlab"
+          1: name: "punctuation.double-percentage.comment.matlab"
+        end: "$"
+      }
+      {
+        begin: "%\\{"
+        beginCaptures:
+          0: name: "punctuation.definition.comment.start.matlab"
+        end: "%\\}"
+        endCaptures:
+          0: name: "punctuation.definition.comment.end.matlab"
+        name: "comment.block.percentage.matlab"
+      }
+      {
+        begin: "(%).*"
+        beginCaptures:
+          0: name: "comment.line.single-percentage.matlab"
+          1: name: "punctuation.single-percentage.comment.matlab"
+        end: "$"
+      }
+      {
+        begin: "(\\.\\.\\.).*"
+        beginCaptures:
+          0: name: "comment.line.triple-point.matlab"
+          1: name: "punctuation.triple-point.comment.matlab"
+        end: "$"
+      }
+    ]
+
+  constants_override:
+    comment: "The user is trying to override MATLAB constants and functions."
+    match: "(^|\\;)\\s*(pi|inf|Inf|nan|NaN|eps|end)\\s*=[^=]"
+    name: "meta.inappropriate.matlab"
+
+  curlybrackets:
+    begin: "\\{"
+    beginCaptures:
+      0: name: "punctuation.definition.array.braces.begin.matlab"
+    contentName: "meta.curly.matlab"
+    end: "\\}"
+    endCaptures:
+      0: name: "punctuation.definition.array.braces.end.matlab"
+    patterns: [{ include: "#patterns_not_kws" }]
+
+  end_in_parens:
+    comment: "end as operator symbol"
+    match: "\\bend\\b"
+    name: "keyword.operator.symbols.matlab"
+
+  function:
+    patterns: [
+      {
+        begin: """
+          (?x)
+        						(^\\s*)								    # Leading whitespace
+        						(function)
+        						\\s+
+        						(?:									      # Optional - output
+        							(?:
+        								(\\[) ([^\\]]*) (\\])
+        							  | ([a-zA-Z_]\\w*)
+        							)
+        							\\s* = \\s*
+        						)?
+        						([a-zA-Z_]\\w*)						# Function name
+        						\\s*									    # Trailing space
+                    (?:                       # Optional - input
+                      (?:
+        								(\\() ([^\\)]*) (\\))
+        							)
+                    )?
+        """
+        beginCaptures:
+          0: name: "meta.function.$7.line.matlab"
+          2: name: "storage.type.function.matlab"
+          3: name: "punctuation.definition.parameters.brackets.begin.matlab"
+          4: patterns: [
+              {
+                match: "[a-zA-Z_]\\w*"
+                name: "variable.parameter.output.matlab"
+              }
+            ]
+          5: name: "punctuation.definition.parameters.brackets.end.matlab"
+          6: name: "variable.parameter.output.matlab"
+          7: name: "entity.name.function.matlab"
+          8: name: "punctuation.definition.parameters.parens.begin.matlab"
+          9: patterns: [
+              {
+                match: "[a-zA-Z_]\\w*"
+                name: "variable.parameter.input.matlab"
+              }
+            ]
+          10: name: "punctuation.definition.parameters.parens.end.matlab"
+        end: "^\\s*(end)\\b(\\s*\\n)?"
+        endCaptures:
+          1: name: "keyword.control.end.function.matlab"
+        contentName: "meta.function.$7.scope.matlab"
+        patterns: [{ include: "$self" }]
+      }
+    ]
+
+  keyword_with_string:
+    comment: "Keywords with string input"
+    match: "(?<=[;,]|^)\\s*(?!persistent\\s)([a-zA-Z]\\w*)[ \\t]+(?:\\(|\\)|<\\s|>\\s|\\+\\s|-\\s|\\*\\s|\\.\\*\\s|/\\s|\\./\\s|\\\\\\s|\\.\\\\\\s|\\^\\s|\\.\\^\\s|([^\\s*=][^,;\\n]*))"
+    name: "meta.keyword_with_string.matlab"
+    captures:
+      1: name: "meta.command.matlab"
+      2: patterns: [
+        { include: "#input_string"}
+        { include: "#comments"}
+      ]
+
+  not_equal_invalid:
+    comment: "Not equal is written ~= not !=."
+    match: "\\s*!=\\s*"
+    name: "invalid.illegal.invalid-inequality.matlab"
+
+  number:
+    comment: "Valid numbers: 1, .1, 1.1, .1e1, 1.1e1, 1e1, 1i, 1j, 1e2j"
+    match: "(?<=[\\s\\-\\+\\*\\/\\\\=:\\[\\(\\{,;^])\\d*\\.?\\d+([eE][+-]?\\d)?([0-9&&[^\\.]])*(i|j)?\\b"
+    name: "constant.numeric.matlab"
+
+  operators:
+    comment: "Operator symbols"
+    match: "(==|~=|~|>=|>|<=|<|&&|&|:|\\||\\|\\||\\+|-|\\*|\\.\\*|/|\\./|\\\\|\\.\\\\|\\^|\\.\\^)"
+    name: "keyword.operator.symbols.matlab"
+
+  parens:
+    begin: "\\("
+    beginCaptures:
+      0: name: "punctuation.definition.array.parens.begin.matlab"
+    contentName: "meta.parens.matlab"
+    end: "\\)"
+    endCaptures:
+      0: name: "punctuation.definition.array.parens.end.matlab"
+    patterns: [{ include: "#patterns_not_kws" }]
+
+  patterns_not_kws:
+    patterns: [
+      { include: "#classdef" }
+      { include: "#function" }
+      { include: "#blocks" }
+      { include: "#constants_override" }
+      { include: "#brackets" }
+      { include: "#curlybrackets" }
+      { include: "#parens" }
+      { include: "#persistent" }
+      { include: "#string" }
+      { include: "#transpose" }
+      { include: "#double_quote" }
+      { include: "#operators" }
+      { include: "#builtin_keywords" }
+      { include: "#comments" }
+      { include: "#number" }
+      { include: "#variable_invalid" }
+      { include: "#not_equal_invalid" }
+      { include: "#punctuation"}
+      { include: "#variable_assignment" }
+      { include: "#end_in_parens" }
+    ]
+
+  persistent:
+    name: "meta.persistent.matlab"
+    match: "(persistent)[ \\t]+(.*)"
+    captures:
+      1: name: "storage.modifier.matlab"
+      2: patterns: [
+        { include: "#variable_persistent"}
+        { include: "#variable_invalid"}
+        { include: "#comments"}
+      ]
+
+  string:
+    patterns: [
+      {
+        captures:
+          1: name: "string.interpolated.matlab"
+          2: name: "punctuation.definition.string.begin.matlab"
+        comment: "Shell command"
+        match: "^\\s*((!).*$\\n?)"
+      }
+      {
+        begin: "((?<=(\\[|\\(|\\{|=|\\s|;|:|,))|^)'"
+        beginCaptures:
+          0: name: "punctuation.definition.string.begin.matlab"
+        end: "'(?=(\\]|\\)|\\}|=|~|<|>|&|\\||-|\\+|\\*|\\.|\\^|\\||\\s|;|:|,))"
+        endCaptures:
+          0: name: "punctuation.definition.string.end.matlab"
+        name: "string.quoted.single.matlab"
+        patterns: [
+          {
+            match: "''"
+            name: "constant.character.escape.matlab"
+          }
+          {
+            match: "'(?=.)"
+            name: "invalid.illegal.unescaped-quote.matlab"
+          }
+          {
+            comment: "Operator symbols"
+            match: "((\\%([\\+\\-0]?\\d{0,3}(\\.\\d{1,3})?)(c|d|e|E|f|g|G|s|((b|t)?(o|u|x|X))))|\\%\\%|\\\\(b|f|n|r|t|\\\\))"
+            name: "constant.character.escape.matlab"
+          }
+        ]
+      }
+      {
+        begin: "((?<=(\\[|\\(|\\{|=|\\s|;|:|,))|^)\""
+        beginCaptures:
+          0: name: "punctuation.definition.string.begin.matlab"
+        end: "\"(?=(\\]|\\)|\\}|=|~|<|>|&|\\||-|\\+|\\*|\\.|\\^|\\||\\s|;|:|,))"
+        endCaptures:
+          0: name: "punctuation.definition.string.end.matlab"
+        name: "string.quoted.double.matlab"
+        patterns: [
+          {
+            match: "\"\""
+            name: "constant.character.escape.matlab"
+          }
+          {
+            match: "\"(?=.)"
+            name: "invalid.illegal.unescaped-quote.matlab"
+          }
+          {
+            comment: "Operator symbols"
+            match: "((\\%([\\+\\-0]?\\d{0,3}(\\.\\d{1,3})?)(c|d|e|E|f|g|G|s|((b|t)?(o|u|x|X))))|\\%\\%|\\\\(b|f|n|r|t|\\\\))"
+            name: "constant.character.escape.matlab"
+          }
+        ]
+      }
+    ]
+
+  transpose:
+    match: "((\\w+)|(?<=\\])|(?<=\\))|(?<=\\}))\\.?(')"
+    captures:
+      3: name: "keyword.operator.transpose.matlab"
+
+  variable_persistent:
+    match: "\\b[a-zA-Z]\\w*\\b"
+    name: "meta.variable.persistent.matlab"
+
+  input_string:
+    match: "[^\\s%][^\\s]*"
+    name: "string.input.matlab"
+
+  punctuation:
+    match: "[,;]"
+    name: "punctuation.terminator"
+
+  variable_assignment:
+    comment: "Incomplete variable assignment."
+    match: "=\\s*\\.{0,2}\\s*;?\\s*$\\n?"
+    name: "invalid.illegal.incomplete-variable-assignment.matlab"
+
+  variable_invalid:
+    comment: "No variables or function names can start with a number or an underscore."
+    match: "\\b(_\\w|\\d+[_a-df-zA-DF-Z])\\w*\\b"
+    name: "invalid.illegal.invalid-variable-name.matlab"

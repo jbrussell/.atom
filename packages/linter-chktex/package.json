@@ -1,0 +1,64 @@
+{
+  "_from": "https://www.atom.io/api/packages/linter-chktex/versions/1.4.0/tarball",
+  "_id": "linter-chktex@1.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-B1Co4BdXlidpD/sygSnlq47FCOw1a08GpIWwQ9w4Y5MAkc2wvnxn6KT2JudPVcaRnkB/LyhVOYQ+kB1WYS0lxw==",
+  "_location": "/linter-chktex",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/linter-chktex/versions/1.4.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/linter-chktex/versions/1.4.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/linter-chktex/versions/1.4.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/linter-chktex/versions/1.4.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/linter-chktex/versions/1.4.0/tarball",
+  "_shasum": "4217ccdfce25946eb09055e37b0c143d342a1bf1",
+  "_spec": "https://www.atom.io/api/packages/linter-chktex/versions/1.4.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119107-61186-ryp8uw.rib6s",
+  "activationCommands": [],
+  "bugs": {
+    "url": "https://github.com/nscaife/linter-chktex/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "atom-linter": "^3.2.0",
+    "atom-package-deps": "^4.6.0",
+    "xregexp": "^2.0.0"
+  },
+  "deprecated": false,
+  "description": "Linter plugin for LaTeX, using chktex",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "https://github.com/nscaife/linter-chktex#readme",
+  "keywords": [
+    "tex",
+    "latex",
+    "lint",
+    "linter",
+    "chktex"
+  ],
+  "license": "MIT",
+  "main": "./lib/linter-chktex",
+  "name": "linter-chktex",
+  "package-deps": [
+    "linter"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nscaife/linter-chktex.git"
+  },
+  "version": "1.4.0"
+}

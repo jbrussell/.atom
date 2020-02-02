@@ -1,0 +1,122 @@
+"*":
+  Hydrogen:
+    globalMode: true
+    languageMappings: "{ \"python\": \"magicpython\", \"python3\": \"magicpython\", \"bash\": \"shell script\", \"Matlab\": \"matlab\" }"
+    startDir: "dirOfFile"
+    startupCode: "{\"python 3\": \"%matplotlib inline\\nmatplotlib.rcParams['font.family'] = 'Helvetica'\\nmatplotlib.rcParams['pdf.fonttype'] = 42\\nmatplotlib.rcParams['ps.fonttype'] = 42\"}"
+  Zen:
+    softWrap: true
+    tabs: "multiple"
+    width: 100
+  "atom-ide-ui":
+    "debugger-exceptionBreakpointsCollapsed": false
+  "atom-python-virtualenv":
+    additionalVirtualEnvPaths: "$HOME/anaconda/envs/"
+  core:
+    disabledPackages: [
+      "language-gfm"
+      "atom-debug-ui"
+      "hydrogen-cell-separator"
+      "language-matlab"
+      "markdown-preview"
+      "linter-chktex"
+      "fonts"
+      "markdown-pdf"
+      "git-diff"
+    ]
+    telemetryConsent: "no"
+  editor:
+    fontSize: 12
+  "exception-reporting":
+    userId: "cb8975dc-7c64-4616-ad3a-3f791b3745cd"
+  fonts:
+    fontFamily: "Monoid"
+  latex:
+    buildOnSave: true
+  "linter-chktex": {}
+  "linter-matlab":
+    mlintDir: "/Applications/MATLAB_R2017a.app/bin/maci64/"
+  "linter-pylama":
+    ignoreErrorsAndWarnings: "D203,D212,D213,D404,E501"
+    interpreter: "/Users/russell/anaconda/bin/python3"
+  "linter-python":
+    executablePath: "/Users/russell/anaconda/bin/pylama"
+    force: true
+    withMcCabe: true
+    withPep257: true
+    withPep8: true
+    withPyflakes: true
+    withPylint: true
+  "linter-shellcheck":
+    enableNotice: true
+    shellcheckExecutablePath: "/Users/russell/anaconda/bin/shellcheck"
+  "linter-ui-default":
+    panelHeight: 300
+  "markdown-preview-plus":
+    mathConfig:
+      enableLatexRenderingByDefault: true
+    previewConfig: {}
+    saveConfig:
+      defaultSaveFormat: "pdf"
+    syntaxThemeName: "atom-light-syntax"
+    useGitHubStyle: true
+  minimap:
+    plugins:
+      selection: true
+      selectionDecorationsZIndex: 0
+      "split-diff": true
+      "split-diffDecorationsZIndex": 0
+  "pdf-view":
+    fitToWidthOnOpen: true
+  "platformio-ide-terminal":
+    core:
+      workingDirectory: "Active File"
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "source.rst"
+      "text.restructuredtext"
+      "text.tex.latex"
+      "text.md"
+    ]
+  "split-diff": {}
+  "status-bar": {}
+  "theme-switcher":
+    syntaxThemeOne: "one-dark-syntax"
+    syntaxThemeTwo: "pen-paper-coffee-syntax"
+    uiThemeTwo: "one-dark-ui"
+  typewriter:
+    scopes: "source.gfm,text.html.mediawiki,text.tex.latex,text.md"
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
+    removeTrailingWhitespace: false
+  wordcount:
+    extensions: [
+      "md"
+      "markdown"
+      "readme"
+      "txt"
+      "rst"
+      "adoc"
+      "log"
+      "msg"
+      "tex"
+    ]
+".bibtex.text":
+  editor:
+    softWrap: false
+".latex.tex.text":
+  editor:
+    softWrap: true
+".md.text":
+  editor:
+    softWrap: true
+".tex.text":
+  editor:
+    softWrap: true

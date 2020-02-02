@@ -1,0 +1,75 @@
+{
+  "_from": "https://www.atom.io/api/packages/hydrogen-launcher/versions/1.2.2/tarball",
+  "_id": "hydrogen-launcher@1.2.2",
+  "_inBundle": false,
+  "_integrity": "sha512-e+U9ihdvcaHymCTaXoF9jQxzHP9XG2SMs4S+dCBfBShG+n73P8sNLkILR55tMqwLRg5OvEiMNSOOMly+23+wfA==",
+  "_location": "/hydrogen-launcher",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/hydrogen-launcher/versions/1.2.2/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/hydrogen-launcher/versions/1.2.2/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/hydrogen-launcher/versions/1.2.2/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/hydrogen-launcher/versions/1.2.2/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/hydrogen-launcher/versions/1.2.2/tarball",
+  "_shasum": "f8d9ed90c2d8d4af30af09d27a09e69458bc9417",
+  "_spec": "https://www.atom.io/api/packages/hydrogen-launcher/versions/1.2.2/tarball",
+  "_where": "/private/tmp/apm-install-dir-119104-6358-mitqrt.no0om",
+  "bugs": {
+    "url": "https://github.com/lgeiger/hydrogen-launcher/issues"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "hydrogen.provider": {
+      "versions": {
+        "^1.0.0": "consumeHydrogen"
+      }
+    },
+    "runInTerminal": {
+      "description": "Allow to run commands in platformio ide terminal.",
+      "versions": {
+        "^0.14.5": "consumePlatformIoTerminal"
+      }
+    }
+  },
+  "dependencies": {
+    "term-launcher": "^0.4.0"
+  },
+  "deprecated": false,
+  "description": "Launch terminals and jupyter consoles connected to hydrogen",
+  "devDependencies": {
+    "babel-eslint": "^7.1.0",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/lgeiger/hydrogen-launcher#readme",
+  "keywords": [
+    "hydrogen",
+    "terminal",
+    "launch",
+    "console",
+    "jupyter",
+    "ipython"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "hydrogen-launcher",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgeiger/hydrogen-launcher.git"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "version": "1.2.2"
+}

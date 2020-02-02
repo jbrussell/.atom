@@ -1,0 +1,49 @@
+{
+  "_from": "https://www.atom.io/api/packages/hydrogen-cell-separator/versions/0.4.1/tarball",
+  "_id": "hydrogen-cell-separator@0.4.1",
+  "_inBundle": false,
+  "_integrity": "sha512-oFllAzvOG0TgS2YprJZrSN8PIIWaExLPMUWJQF3S+6+uIlKbUpjdkqJxUPelGj6qHQHzJMBXzKgKjmGJUZI43g==",
+  "_location": "/hydrogen-cell-separator",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/hydrogen-cell-separator/versions/0.4.1/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/hydrogen-cell-separator/versions/0.4.1/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/hydrogen-cell-separator/versions/0.4.1/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/hydrogen-cell-separator/versions/0.4.1/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/hydrogen-cell-separator/versions/0.4.1/tarball",
+  "_shasum": "91ebe7adb6dba36a3a68142f6c68f5ece90428d6",
+  "_spec": "https://www.atom.io/api/packages/hydrogen-cell-separator/versions/0.4.1/tarball",
+  "_where": "/private/tmp/apm-install-dir-119104-9391-17v7mjp.481n",
+  "activationCommands": {},
+  "bugs": {
+    "url": "https://github.com/jhabriel/hydrogen-cell-separator/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Atom package to improve identification of cells by separating them with a horizontal line.",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/jhabriel/hydrogen-cell-separator#readme",
+  "keywords": [
+    "atom",
+    "hydrogen",
+    "jupyter",
+    "cells"
+  ],
+  "license": "MIT",
+  "main": "./lib/hydrogen-cell-separator",
+  "name": "hydrogen-cell-separator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhabriel/hydrogen-cell-separator.git"
+  },
+  "version": "0.4.1"
+}

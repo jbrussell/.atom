@@ -1,0 +1,51 @@
+{
+  "_from": "https://www.atom.io/api/packages/minimap-selection/versions/4.5.0/tarball",
+  "_id": "minimap-selection@4.5.0",
+  "_inBundle": false,
+  "_integrity": "sha512-lKFBTeiBB7IL7bqyEM7d39w+6C47n2lYzZa3Mw/WbNGeClpMmx2/GxpCgUpwz97WeVqi5izAvxXyEniv8kCOEg==",
+  "_location": "/minimap-selection",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/minimap-selection/versions/4.5.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/minimap-selection/versions/4.5.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/minimap-selection/versions/4.5.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/minimap-selection/versions/4.5.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/minimap-selection/versions/4.5.0/tarball",
+  "_shasum": "6aa897ee3a46b285d6bcc2047b0c490db1c7906c",
+  "_spec": "https://www.atom.io/api/packages/minimap-selection/versions/4.5.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119104-10447-12k6otk.qk1l",
+  "bugs": {
+    "url": "https://github.com/atom-minimap/minimap-selection/issues"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "minimap": {
+      "versions": {
+        "1.0.0": "consumeMinimapServiceV1"
+      }
+    }
+  },
+  "dependencies": {
+    "event-kit": "1.x"
+  },
+  "deprecated": false,
+  "description": "Display the buffer's selections on the minimap",
+  "engines": {
+    "atom": ">=0.175.0"
+  },
+  "homepage": "https://github.com/atom-minimap/minimap-selection#readme",
+  "license": "MIT",
+  "main": "./lib/minimap-selection",
+  "name": "minimap-selection",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom-minimap/minimap-selection.git"
+  },
+  "version": "4.5.0"
+}

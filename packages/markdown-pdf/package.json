@@ -1,0 +1,58 @@
+{
+  "_from": "https://www.atom.io/api/packages/markdown-pdf/versions/2.2.0/tarball",
+  "_id": "markdown-pdf@2.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-SO1vc6VuwiTlzybCCFppfEyELX61BSTj8b0FpcEBBVYOadFJwc5cH2Mf+Pbx+3fPb2+YekWQrot1ktM7by30Sw==",
+  "_location": "/markdown-pdf",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/markdown-pdf/versions/2.2.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/markdown-pdf/versions/2.2.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/markdown-pdf/versions/2.2.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/markdown-pdf/versions/2.2.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/markdown-pdf/versions/2.2.0/tarball",
+  "_shasum": "f1b4333979a9a00a935e64c7793804a93ed05a44",
+  "_spec": "https://www.atom.io/api/packages/markdown-pdf/versions/2.2.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-1191117-13267-1mqp8uh.pam9h",
+  "activationCommands": {
+    "atom-workspace": "markdown-pdf:convert"
+  },
+  "author": {
+    "name": "Travis Jacobs",
+    "url": "github.com/travs"
+  },
+  "bugs": {
+    "url": "https://github.com/travs/markdown-pdf/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "html-pdf": "2.0.x",
+    "less": "^2.7.3",
+    "loophole": "^1.1.0",
+    "mdpdf": "^1.6.0",
+    "tmp": "0.0.33"
+  },
+  "deprecated": false,
+  "description": "Convert markdown to pdf, png or jpeg on the fly.",
+  "devDependencies": {
+    "temp": "^0.8.3"
+  },
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/travs/markdown-pdf#readme",
+  "license": "MIT",
+  "main": "./lib/markdown-pdf",
+  "name": "markdown-pdf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/travs/markdown-pdf.git"
+  },
+  "version": "2.2.0"
+}

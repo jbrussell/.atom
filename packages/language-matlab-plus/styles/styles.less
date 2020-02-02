@@ -1,0 +1,33 @@
+@import "syntax-variables";
+
+atom-text-editor {
+  .variable-persistent {
+    color: #82AAFF;
+  }
+
+  .section-start-line {
+    border-top: 1px solid @syntax-indent-guide-color;
+    margin-top: -1px;
+  }
+
+  .section-end-line {
+    border-bottom: 1px solid @syntax-indent-guide-color;
+    margin-top: -1px;
+  }
+
+  .syntax--source.syntax--matlab {
+    .syntax--meta.syntax--variable.syntax--persistent {
+      .variable-persistent
+    }
+  }
+
+  .gutter:hover {
+		.line-number.section-start .icon-right {
+			visibility: visible;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}

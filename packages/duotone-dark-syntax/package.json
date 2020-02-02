@@ -1,0 +1,75 @@
+{
+  "_from": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+  "_id": "duotone-dark-syntax@2.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-D4F3iIkOSYHcpu8Yh2W5sySMXzcHFZXmDtDUe0wXsgy0aJXvZJ8cIAa/cUUWebtLK7LyQ6zHblNYij155UQwXg==",
+  "_location": "/duotone-dark-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+  "_shasum": "6693e23acc1ad5fbd7518a90d6603c97e03437c5",
+  "_spec": "https://www.atom.io/api/packages/duotone-dark-syntax/versions/2.1.0/tarball",
+  "_where": "/private/tmp/apm-install-dir-119930-40748-5f8g31.k50wl",
+  "bugs": {
+    "url": "https://github.com/simurai/duotone-dark-syntax/issues"
+  },
+  "bundleDependencies": false,
+  "configSchema": {
+    "color": {
+      "title": "Custom Colors",
+      "type": "object",
+      "properties": {
+        "uno": {
+          "title": "Uno",
+          "description": "Customize the main color",
+          "order": 1,
+          "type": "color",
+          "default": "#a59ccc"
+        },
+        "duo": {
+          "title": "Duo",
+          "description": "Customize the accent color",
+          "order": 2,
+          "type": "color",
+          "default": "#ffe685"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "chroma-js": "1.1.1",
+    "duotone-syntax": "^2.1.0"
+  },
+  "deprecated": false,
+  "description": "A dark DuoTone syntax theme",
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
+  },
+  "homepage": "https://github.com/simurai/duotone-dark-syntax#readme",
+  "keywords": [
+    "dark",
+    "purple",
+    "gold",
+    "duotone",
+    "syntax"
+  ],
+  "license": "MIT",
+  "main": "lib/duotone",
+  "name": "duotone-dark-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simurai/duotone-dark-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "2.1.0"
+}
