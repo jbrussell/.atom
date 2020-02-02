@@ -30,7 +30,7 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "jquery": "2.x.x"
+    "jquery": "3.x.x"
   },
   "deprecated": false,
   "description": "Distraction free writing.",
